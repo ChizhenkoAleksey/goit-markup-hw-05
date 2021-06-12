@@ -698,6 +698,34 @@ border-radius: 2px;
     line-height: 1.142;
 }
 
-
-
-
+.box {
+    position: relative;
+  width: 370px;
+  height: 294px;
+  margin-left: auto;
+  margin-right: auto;
+ 
+  overflow: hidden;
+  }
+  .box:hover .overlay {
+    transform: translatex(0);
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--while-color);
+    background-color: var(--pretty-color);
+    transform: translatey(100%);
+    transition: transform 250ms ease;
+  }
+  
+  .overlay > p {
+    color: var(--while-color);
+    padding: 63px 24px;
+    margin: 0;
+    font-size: 18px;
+    align-items: center;
+  }
