@@ -107,8 +107,7 @@ h1 {
 .auth-navlist a:hover,.auth-navlist a:focus
 {
     color: var(--pretty-color);
-    transition: transform 250ms ease;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 /*site-nav*/
@@ -141,12 +140,15 @@ h1 {
     padding-top: 24px;
     padding-bottom: 25px;
 }
-
+.site-navlist a {
+    transition-property: color;
+    transition: transform 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 .site-navlist a:hover,.site-navlist a:focus
 {
     color: var(--pretty-color);
-    transition: transform 250ms ease;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 .site-nav .link.current {
     color: var(--pretty-color);
@@ -159,7 +161,9 @@ h1 {
 .auth-navlist a {
     display: flex;
     align-items: center;
-
+    transition-property: color;
+    transition: transform 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 /* секция post */
@@ -219,24 +223,30 @@ h1 {
     position: fixed;
     top: 0;
     left: 0;
-    width: 1600px;
-    height: 1024px;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    transition: opacity 250ms  cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
+    transition: opacity 250ms  cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms  cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 528px;
-    height: 581px;
+    transform: translate(-50%, -50%) scale(1);
+    min-width: 528px;
+    min-height: 581px;
     background-color: var(--while-color);
-border-radius: 4px;
-    
+    border-radius: 4px;
+    transition: opacity 250ms  cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(1);
 }
 .button-modal {
     position: absolute;
@@ -389,6 +399,9 @@ border-radius: 4px;
     
 
 }
+.footer-list {
+    margin-right: 70px;
+}
 .tel-list .map {
     display: inline-block;
     color: var(--while-color);
@@ -436,13 +449,14 @@ border-radius: 4px;
     font-size: 16px;
     padding: 6px 22px 6px 22px;
     border: 0;
+    transition-property: background-color, color;
+    transition: transform 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 }
-.button-primary:hover,.button-primary:focus {
-    color: var(--while-color) ;
+.button-primary:hover, .button-primary:focus {
     background-color: var(--pretty-color);
-    transition: transform 250ms ease;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--while-color);
 }
 .comunity {
     display: flex;
@@ -502,15 +516,14 @@ border-radius: 4px;
 
 .container-client {
     display: flex;
-    padding: 0;
-    margin: 0;
-    justify-content:center;
+    
     
    
     
 }
 
 .client {
+    position: relative;
     display: flex;
     width: 170px;
     height: 92px;
@@ -521,12 +534,14 @@ border-radius: 4px;
     text-align: center;
     align-items: center;
     border-radius: 2px;
+    transition-property: fill;
+    transition: transform 1000ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client:hover, .client:focus {
     fill: var(--pretty-color);
     outline: 1px solid var(--pretty-color);
-    transition: transform 250ms ease;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 .container-client li:nth-last-child(1n) {
     margin-right: 30px;
@@ -580,8 +595,7 @@ border-radius: 2px;
 }
 .button-primary:hover, .button-primary:focus {
     box-shadow: 10px 10px 8px 2px rgba(0, 0, 0, 0.3);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition: transform 250ms ease;
+    
 }
 .envelope {
     width: 16px;
@@ -607,7 +621,9 @@ border-radius: 2px;
     fill: var(--client-color);
     align-items: center;
     justify-content: center;
-    
+    transition-property: background-color;
+    transition: transform 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .aria {
     width: 20px;
@@ -630,14 +646,14 @@ border-radius: 2px;
     background-color: var(--pretty-color);
     border-radius: 50%;
     fill: var(--table-color);
-    transition: transform 250ms ease;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 
 .conteiner-footer {
     display: flex;
     align-items: baseline;
+    
 }
 .social {
  display: flex;
@@ -659,7 +675,9 @@ border-radius: 2px;
     background-color: rgba(0, 0, 0, 0.25);
     align-items: center;
     justify-content: center;
-    
+    transition-property: background-color;
+    transition: transform 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social .con {
     width: 20px;
@@ -674,12 +692,13 @@ border-radius: 2px;
     line-height: 1.142;
     margin-bottom: 0;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 .social a:hover, .social a:focus {
     background-color: var(--pretty-color);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition: transform 250ms ease;
+    
+    
 }
 
 .img {
@@ -694,11 +713,11 @@ border-radius: 2px;
     position: absolute;
     background-color: rgba(47, 48, 58, 0.8);
     height: 70px;
-    width: 370px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    text-transform: uppercase;
    
     bottom: 0;
     left: 0;
@@ -722,11 +741,10 @@ border-radius: 2px;
  
   overflow: hidden;
   }
-  .box:hover .overlay {
+  .comunity a:hover .overlay {
     transform: translatey(0);
     opacity: 1;
-    transition: transform 250ms ease;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
   }
   .overlay {
     position: absolute;
@@ -738,7 +756,11 @@ border-radius: 2px;
     color: var(--while-color);
     background-color: var(--pretty-color);
     transform: translatey(100%);
-    transition: transform 250ms ease;
+    transition-property: background-color;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+    
+    
     
   }
   
@@ -753,6 +775,7 @@ border-radius: 2px;
   }
   .active {
       position: relative;
+      color: var(--pretty-color);
   }
   .active::after {
       position: absolute;
